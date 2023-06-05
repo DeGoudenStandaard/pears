@@ -1,4 +1,8 @@
 jupyter
 jupyterlab
+matplotlib
+opencv-python
+opencv-python-headless
 pandas
 scikit-learn
+tensorflow
