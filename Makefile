@@ -43,13 +43,11 @@ venv: ## Create a venv for IDE intellisense
 	else \
 		make linux_venv; \
 	fi
-	@echo "Installing the requirements..."
-	pip install -r requirements.txt
 
 windows_venv:
 	@python -m venv venv
 	@echo "Activating the virtual environment..."
-	@venv/Scripts/activate
+	@. ./venv/Scripts/activate
 
 linux_venv:
 	@python3 -m venv venv
