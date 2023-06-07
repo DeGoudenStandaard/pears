@@ -10,5 +10,5 @@ venv/
 
 # Data
 **/data/*
-!data/readme.md
+!readme.md
 models
