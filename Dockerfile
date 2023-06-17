@@ -7,26 +7,20 @@ WORKDIR /app
 # Copy the requirements.txt file into the working directory
 COPY requirements.txt .
 
-# Copy the data directory into the working directory
-COPY ./app/data /app/data
-
 # Set the environment variables
 ENV PIP_ROOT_USER_ACTION=ignore
 
-# Install system libraries required for OpenCV
+# Install project libraries and configure jupyter server 
 RUN apt-get update && apt-get install -y \
     libsm6 \
     libxext6 \
     libxrender-dev \
-    libgl1-mesa-glx
-
-# Install any needed packages and create jupyter server configuration
-RUN apt-get update && \
-    apt-get install -y curl gnupg && \
+    libgl1-mesa-glx \
+    curl \
+    gnupg \
+    nvidia-container-toolkit && \
     curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | apt-key add - && \
     curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu20.04/nvidia-docker.list | tee /etc/apt/sources.list.d/nvidia-docker.list && \
-    apt-get update && \
-    apt-get install -y nvidia-container-toolkit && \
     pip install --upgrade pip && \
     pip install -r requirements.txt && \
     jupyter server --generate-config && \

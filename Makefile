@@ -10,6 +10,11 @@ init: ## Creates the .env file
 	@echo "Creating the .env file..."
 	@cp app/.env.dist app/.env
 
+.PHONY: copy
+copy: ## Copies the data into the Docker container
+	@echo "Copying the data into the Docker container..."
+	@docker cp ./app/data pears-project-tensorflow-jupyter-1:/app/data
+
 .PHONY: build
 build: ## Builds the docker container
 	@echo "Pulling the latest images..."
