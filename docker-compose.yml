@@ -6,7 +6,9 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./app:/app
+      - ./app/notebooks:/app/notebooks
+      - ./app/models:/app/models
+      - ./app/.env:/app/.env
     deploy:
       resources:
         reservations:

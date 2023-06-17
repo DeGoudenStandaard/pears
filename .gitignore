@@ -8,7 +8,11 @@ venv/
 # Environment variables
 .env
 
-# Data
+# Ignore data
 **/data/*
+
+# Ignore models
+**/models/*
+
+# Allow all readme files
 !readme.md
-models

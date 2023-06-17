@@ -12,6 +12,8 @@ init: ## Creates the .env file
 
 .PHONY: build
 build: ## Builds the docker container
+	@echo "Pulling the latest images..."
+	@docker compose pull
 	@echo "Building the docker container..."
 	@docker compose build
 
