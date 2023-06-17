@@ -13,7 +13,7 @@ init: ## Creates the .env file
 .PHONY: copy
 copy: ## Copies the data into the Docker container
 	@echo "Copying the data into the Docker container..."
-	@docker cp ./app/data pears-project-tensorflow-jupyter-1:/app/data
+	@docker cp ./app/data pears-project-tensorflow-jupyter-1:/app
 
 .PHONY: build
 build: ## Builds the docker container
