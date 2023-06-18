@@ -6,15 +6,11 @@ The data structure is __very__ important in this project. The data structure is 
 ```yaml
 data:
 - raw
-    - train
-        - rotten
-            - 0.png
-            - 1.png
-        - not_rotten
-            - 0.png
-            - 1.png
-    - test
-        - all
-            - 0.png
-            - 1.png
+    - train.csv
+    - test.csv
+    - images
+        - 00000274.png
+        - 00000281.png
+        - 00000326.png
+        - 00002762.png
 ```
